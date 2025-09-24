@@ -1,0 +1,30 @@
+Header analysis:
+SPF:	pass with IP Unknown!
+
+SPF: SPF allows the owner of a domain (like example.com) to specify which mail servers are allowed to send emails on behalf of their domain.
+
+It basically means the SPF check passed, so the email was sent from a server allowed by the domain’s SPF record.
+“IP Unknown” doesn’t mean anything suspicious—it usually indicates that the receiving server didn’t log or couldn’t resolve the sending IP properly.
+Some email tools or clients display the sending IP as “Unknown” if they can’t match it to a hostname or if the headers are incomplete.
+The key takeaway: SPF considers this email legitimate for the domain, even if the IP isn’t displayed in your email client.
+
+
+DKIM:	pass with domain Unknown!
+	fail with domain Unknown!
+	pass with domain Unknown!
+	fail with domain Unknown!
+
+DKIM (DomainKeys Identified Mail) is an email authentication method that helps verify whether an email was actually sent by the domain it claims to come from and that it was not tampered with in transit.
+
+DKIM: pass with domain Unknown
+
+The DKIM signature matches (email is authentic for that signature), but the domain in the signature could not be fully verified.
+
+“Domain Unknown” usually means:
+
+The DKIM signature refers to a domain that doesn’t have a proper public key published in DNS.
+Or the tool checking DKIM couldn’t resolve the domain’s DNS properly.
+
+Phishing trail:
+
+On opening the mail there were links which was leading to unknow pages which is dangerous and can lead to stealing of credentials, data leak, cookie stealing so properly checking the sender mail is important to avoid these type of attacks.
