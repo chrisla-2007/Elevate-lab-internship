@@ -1,0 +1,30 @@
+In the windows search bar search for firewall and open "windows defender firewall with Advanced Security"
+
+open Inbound Rules > new Rules
+
+next port > next
+
+ftp:
+
+Choose TCP and Specific local ports → type 23
+
+Choose Block the connection → Next
+
+Apply rule to Domain, Private, Public → Next
+
+Give it a name (e.g., Block Telnet) → Finish
+
+
+and if we open the telnet 127.0.0.1 23 it will not connect 
+
+ssh:
+
+In Inbound Rules, click New Rule…
+
+Port → TCP → Specific local port → 22
+
+Allow the connection → Next
+
+Apply to Domain, Private, Public → Next
+
+Name it Allow SSH → Finish
